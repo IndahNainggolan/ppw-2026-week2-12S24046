@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio - Indah Nainggolan</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <nav>
+        <a href="#tentang">Tentang Saya</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+<main>
+
+    <section id="tentang">
+        <h1>Halo, Saya Indah Nainggolan</h1>
+
+        <p>
+            Saya adalah mahasiswa Sistem Informasi yang tertarik
+            pada pengembangan web, desain antarmuka, dan teknologi informasi.
+        </p>
+
+        <p>
+            Saya senang mempelajari hal-hal baru dan mengembangkan
+            kemampuan saya melalui berbagai proyek dan kegiatan akademik.
+        </p>
+    </section>
+        
+
+        <section id="portfolio">
+        <h2>Portfolio & Proyek</h2>
+
+        <article>
+            <h3>Proyek yang Pernah Saya Kerjakan</h3>
+
+             <p>
+                 Berikut adalah beberapa proyek dan kegiatan akademik
+                yang pernah saya kerjakan selama mempelajari Sistem Informasi.
+            </p>
+
+            <table>
+                <caption>Daftar Proyek dan Pengalaman Akademik</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Proyek</th>
+                        <th scope="col">Mata Kuliah</th>
+                        <th scope="col">Tahun</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Website Portfolio</td>
+                        <td>Pemrograman dan Pengujian Aplikasi Web</td>
+                        <td>2026</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Perancangan Basis Data</td>
+                        <td>Basis Data</td>
+                        <td>2025</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Analisis Sistem Informasi</td>
+                        <td>Analisis dan Perancangan Sistem</td>
+                        <td>2025</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="3">Total Proyek</th>
+                        <td>3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+    </section>
+    <section id="skills">
+        <h2>Keahlian</h2>
+
+        <h3>Skills yang Saya Miliki</h3>
+
+        <ul>
+            <li>HTML dan CSS</li>
+            <li>Java</li>
+            <li>SQL dan Database</li>
+            <li>UI/UX Design</li>
+            <li>Microsoft Office</li>
+        </ul>
+
+        <h3>Yang Sedang Saya Pelajari</h3>
+
+        <ol>
+            <li>Pengembangan Website</li>
+            <li>Perancangan Antarmuka</li>
+            <li>Pengujian Aplikasi Web</li>
+        </ol>
+        </section>
+
+    <aside>
+        <h2>Info Singkat</h2>
+
+        <p>
+            Saya terbuka untuk belajar, bekerja sama dalam tim,
+            dan mengembangkan pengalaman di bidang teknologi informasi.
+        </p>
+    </aside>
+<section id="kontak">
+    <h2>Formulir Layanan</h2>
+
+    <p>
+        Silakan isi formulir berikut jika ingin melakukan konsultasi
+        atau bekerja sama dengan saya.
+    </p>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Data Pribadi</legend>
+
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telepon">Nomor Telepon</label>
+            <input type="tel" id="telepon" name="telepon" required>
+
+            <label for="usia">Usia</label>
+            <input type="number" id="usia" name="usia" min="17" max="100" required>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Detail Layanan</legend>
+
+            <label for="layanan">Jenis Layanan</label>
+            <select id="layanan" name="layanan" required>
+                <option value="">-- Pilih Layanan --</option>
+                <option value="konsultasi">Konsultasi Web</option>
+                <option value="uiux">Konsultasi UI/UX</option>
+                <option value="database">Konsultasi Database</option>
+            </select>
+
+
+            <p>Metode Konsultasi</p>
+
+            <input type="radio" id="online" name="metode" value="online" required>
+            <label for="online">Online</label>
+
+            <input type="radio" id="offline" name="metode" value="offline">
+            <label for="offline">Tatap Muka</label>
+
+
+            <p>Topik yang Diminati</p>
+
+            <input type="checkbox" id="web" name="topik" value="web">
+            <label for="web">Web Development</label>
+
+            <input type="checkbox" id="uiux" name="topik" value="uiux">
+            <label for="uiux">UI/UX</label>
+
+            <input type="checkbox" id="database" name="topik" value="database">
+            <label for="database">Database</label>
+
+
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" required></textarea>
+        </fieldset>
+
+
+        <button type="submit">Kirim Formulir</button>
+
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Indah Nainggolan. Dibuat untuk Praktikum Minggu 02.</p>
+</footer>
+
+</body>
+</html>
