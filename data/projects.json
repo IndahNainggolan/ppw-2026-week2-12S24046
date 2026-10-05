@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "Website Portfolio",
+    "category": "HTML & CSS",
+    "description": "Website portfolio pribadi yang dibuat menggunakan HTML, CSS, dan Bootstrap.",
+    "icon": "bi-window",
+    "tags": [
+      "HTML",
+      "CSS",
+      "Bootstrap"
+    ],
+    "metrics": {},
+    "image": "",
+    "link": ""
+  },
+  {
+    "id": 2,
+    "title": "Perancangan Basis Data",
+    "category": "SQL",
+    "description": "Perancangan database untuk mendukung kebutuhan penyimpanan dan pengelolaan data.",
+    "icon": "bi-database",
+    "tags": [
+      "SQL",
+      "Database"
+    ],
+    "metrics": {},
+    "image": "",
+    "link": ""
+  },
+  {
+    "id": 3,
+    "title": "Analisis Sistem Informasi",
+    "category": "Analisis Sistem",
+    "description": "Analisis kebutuhan dan perancangan sistem informasi berdasarkan kebutuhan pengguna.",
+    "icon": "bi-diagram-3",
+    "tags": [
+      "Analisis Sistem",
+      "Sistem Informasi"
+    ],
+    "metrics": {},
+    "image": "",
+    "link": ""
+  },
+  {
+    "id": 4,
+    "title": "Perancangan UI/UX",
+    "category": "UI/UX",
+    "description": "Perancangan antarmuka dan pengalaman pengguna menggunakan proses desain yang terstruktur.",
+    "icon": "bi-palette",
+    "tags": [
+      "UI/UX",
+      "User Interface",
+      "User Experience"
+    ],
+    "metrics": {},
+    "image": "",
+    "link": ""
+  }
+]

@@ -1,0 +1,362 @@
+:root {
+    --primary-color: #319795;
+    --primary-dark: #285e61;
+    --primary-light: #e6fffa;
+    --background-color: #f5f7fa;
+    --surface-color: #ffffff;
+    --text-color: #2d3748;
+    --muted-text: #4a5568;
+    --border-color: #cbd5e0;
+    --card-radius: 12px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.12);
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--text-color);
+    padding: 20px 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color var(--transition);
+}
+
+nav a:hover {
+    color: #90cdf4;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: var(--surface-color);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+section:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: var(--muted-text);
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+#tentang {
+    border-top: 5px solid var(--primary-color);
+}
+
+#tentang h1 {
+    color: var(--primary-dark);
+}
+
+#tentang p {
+    max-width: 850px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+#skills ul,
+#skills ol {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+#skills li {
+    background-color: #edf2f7;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    font-weight: 600;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+#skills li:hover {
+    background-color: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+#skills li:not(:last-child) {
+    margin-bottom: 2px;
+}
+
+aside {
+    background-color: var(--primary-light);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: var(--card-radius);
+    border-left: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+aside h2 {
+    color: var(--primary-dark);
+}
+
+form {
+    margin-top: 20px;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #90cdf4;
+    border-color: #3182ce;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid #90cdf4;
+    outline-offset: 2px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.card {
+    border: none;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.badge {
+    border-radius: 20px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border-color: var(--border-color);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(49, 151, 149, 0.2);
+}
+
+footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    #skills ul,
+    #skills ol {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

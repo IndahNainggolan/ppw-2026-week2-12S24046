@@ -1,199 +1,1034 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio - Indah Nainggolan</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="description"
+        content="Portfolio pribadi Indah Nainggolan - Mahasiswa Sistem Informasi"
+    >
+
+    <title>Indah.Portfolio</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link
+        rel="stylesheet"
+        href="css/custom-style.css"
+    >
 </head>
 
+
 <body>
-<header>
-    <nav>
-        <a href="#tentang">Tentang Saya</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#kontak">Kontak</a>
-    </nav>
-</header>
-<main>
 
-    <section id="tentang">
-        <h1>Halo, Saya Indah Nainggolan</h1>
+    <!-- ==================== NAVBAR ==================== -->
 
-        <p>
-            Saya adalah mahasiswa Sistem Informasi yang tertarik
-            pada pengembangan web, desain antarmuka, dan teknologi informasi.
-        </p>
+    <header>
 
-        <p>
-            Saya senang mempelajari hal-hal baru dan mengembangkan
-            kemampuan saya melalui berbagai proyek dan kegiatan akademik.
-        </p>
-    </section>
-        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
 
-        <section id="portfolio">
-        <h2>Portfolio & Proyek</h2>
+            <div class="container">
 
-        <article>
-            <h3>Proyek yang Pernah Saya Kerjakan</h3>
+                <a
+                    class="navbar-brand fw-bold"
+                    href="#tentang"
+                >
+                    Indah<span class="text-info">.Portfolio</span>
+                </a>
 
-             <p>
-                 Berikut adalah beberapa proyek dan kegiatan akademik
-                yang pernah saya kerjakan selama mempelajari Sistem Informasi.
-            </p>
 
-            <table>
-                <caption>Daftar Proyek dan Pengalaman Akademik</caption>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Buka menu navigasi"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Proyek</th>
-                        <th scope="col">Mata Kuliah</th>
-                        <th scope="col">Tahun</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Website Portfolio</td>
-                        <td>Pemrograman dan Pengujian Aplikasi Web</td>
-                        <td>2026</td>
-                    </tr>
+                <div
+                    class="collapse navbar-collapse"
+                    id="mainNavbar"
+                >
 
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Perancangan Basis Data</td>
-                        <td>Basis Data</td>
-                        <td>2025</td>
-                    </tr>
+                    <ul class="navbar-nav ms-auto gap-lg-2">
 
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Analisis Sistem Informasi</td>
-                        <td>Analisis dan Perancangan Sistem</td>
-                        <td>2025</td>
-                    </tr>
-                </tbody>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                href="#tentang"
+                            >
+                                Beranda
+                            </a>
+                        </li>
 
-                <tfoot>
-                    <tr>
-                        <th scope="row" colspan="3">Total Proyek</th>
-                        <td>3</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </article>
-    </section>
-    <section id="skills">
-        <h2>Keahlian</h2>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#portfolio"
+                            >
+                                Portfolio
+                            </a>
+                        </li>
 
-        <h3>Skills yang Saya Miliki</h3>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#skills"
+                            >
+                                Keahlian
+                            </a>
+                        </li>
 
-        <ul>
-            <li>HTML dan CSS</li>
-            <li>Java</li>
-            <li>SQL dan Database</li>
-            <li>UI/UX Design</li>
-            <li>Microsoft Office</li>
-        </ul>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#layanan"
+                            >
+                                Layanan
+                            </a>
+                        </li>
 
-        <h3>Yang Sedang Saya Pelajari</h3>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#kontak"
+                            >
+                                Kontak
+                            </a>
+                        </li>
 
-        <ol>
-            <li>Pengembangan Website</li>
-            <li>Perancangan Antarmuka</li>
-            <li>Pengujian Aplikasi Web</li>
-        </ol>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main>
+
+
+        <!-- ==================== TENTANG / HERO ==================== -->
+
+        <section
+            id="tentang"
+            class="py-5"
+        >
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+
+                    <!-- Teks -->
+
+                    <div class="col-lg-7">
+
+                        <span class="badge bg-primary mb-3">
+                            Mahasiswa Sistem Informasi
+                        </span>
+
+
+                        <h1 class="display-4 fw-bold">
+
+                            Halo, saya
+
+                            <span class="text-info">
+                                Indah Nainggolan
+                            </span>
+
+                        </h1>
+
+
+                        <p class="lead mt-3">
+
+                            Saya adalah mahasiswa Sistem Informasi
+                            yang tertarik pada pengembangan website,
+                            database, analisis sistem, dan UI/UX.
+
+                        </p>
+
+
+                        <p>
+
+                            Website ini merupakan portfolio pribadi
+                            yang dikembangkan secara bertahap dari
+                            praktikum Pemrograman dan Pengujian Web.
+
+                        </p>
+
+
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+
+                            <a
+                                href="#portfolio"
+                                class="btn btn-primary"
+                            >
+                                <i class="bi bi-folder2-open me-2"></i>
+                                Lihat Portfolio
+                            </a>
+
+
+                            <a
+                                href="#kontak"
+                                class="btn btn-outline-primary"
+                            >
+                                <i class="bi bi-envelope me-2"></i>
+                                Hubungi Saya
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FOTO -->
+
+                    <div class="col-lg-5">
+
+                        <div class="card border-0 shadow-sm">
+
+                            <div class="card-body p-4 text-center">
+
+                                <img
+                                    src="images/profile-portfolio.jpg"
+                                    alt="Foto Indah Nainggolan"
+                                    class="img-fluid rounded-4 shadow-sm"
+                                    style="
+                                        width: 280px;
+                                        height: 350px;
+                                        object-fit: cover;
+                                    "
+                                >
+
+
+                                <h2 class="h4 mt-4 mb-1">
+                                    Indah Nainggolan
+                                </h2>
+
+
+                                <p class="text-muted mb-0">
+                                    Information Systems Student
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
-    <aside>
-        <h2>Info Singkat</h2>
 
-        <p>
-            Saya terbuka untuk belajar, bekerja sama dalam tim,
-            dan mengembangkan pengalaman di bidang teknologi informasi.
-        </p>
-    </aside>
-<section id="kontak">
-    <h2>Formulir Layanan</h2>
+        <!-- ==================== PORTFOLIO ==================== -->
 
-    <p>
-        Silakan isi formulir berikut jika ingin melakukan konsultasi
-        atau bekerja sama dengan saya.
-    </p>
+        <section
+            id="portfolio"
+            class="py-5"
+        >
 
-    <form action="#" method="post">
-
-        <fieldset>
-            <legend>Data Pribadi</legend>
-
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" id="nama" name="nama" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="telepon">Nomor Telepon</label>
-            <input type="tel" id="telepon" name="telepon" required>
-
-            <label for="usia">Usia</label>
-            <input type="number" id="usia" name="usia" min="17" max="100" required>
-        </fieldset>
+            <div class="container">
 
 
-        <fieldset>
-            <legend>Detail Layanan</legend>
+                <div class="text-center mb-4">
 
-            <label for="layanan">Jenis Layanan</label>
-            <select id="layanan" name="layanan" required>
-                <option value="">-- Pilih Layanan --</option>
-                <option value="konsultasi">Konsultasi Web</option>
-                <option value="uiux">Konsultasi UI/UX</option>
-                <option value="database">Konsultasi Database</option>
-            </select>
+                    <span class="badge bg-info text-dark mb-2">
+                        Portfolio
+                    </span>
 
+                    <h2>
+                        Portfolio & Proyek
+                    </h2>
 
-            <p>Metode Konsultasi</p>
+                    <p>
+                        Beberapa proyek yang pernah saya kerjakan
+                        selama mempelajari Sistem Informasi.
+                    </p>
 
-            <input type="radio" id="online" name="metode" value="online" required>
-            <label for="online">Online</label>
-
-            <input type="radio" id="offline" name="metode" value="offline">
-            <label for="offline">Tatap Muka</label>
+                </div>
 
 
-            <p>Topik yang Diminati</p>
+                <!-- FILTER -->
 
-            <input type="checkbox" id="web" name="topik" value="web">
-            <label for="web">Web Development</label>
+                <div class="row justify-content-center mb-4">
 
-            <input type="checkbox" id="uiux" name="topik" value="uiux">
-            <label for="uiux">UI/UX</label>
+                    <div class="col-md-5">
 
-            <input type="checkbox" id="database" name="topik" value="database">
-            <label for="database">Database</label>
-
-
-            <label for="pesan">Pesan</label>
-            <textarea id="pesan" name="pesan" rows="5" required></textarea>
-        </fieldset>
+                        <label
+                            for="categoryFilter"
+                            class="form-label fw-semibold"
+                        >
+                            Filter Kategori
+                        </label>
 
 
-        <button type="submit">Kirim Formulir</button>
+                        <select
+                            id="categoryFilter"
+                            class="form-select"
+                        >
 
-    </form>
-</section>
+                            <option value="all">
+                                Semua Kategori
+                            </option>
 
-</main>
+                        </select>
 
-<footer>
-    <p>&copy; 2026 Indah Nainggolan. Dibuat untuk Praktikum Minggu 02.</p>
-</footer>
+                    </div>
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="loadingState"
+                    class="text-center py-4"
+                >
+
+                    <div
+                        class="spinner-border text-primary"
+                        role="status"
+                    >
+
+                        <span class="visually-hidden">
+                            Loading...
+                        </span>
+
+                    </div>
+
+
+                    <p class="mt-2">
+                        Memuat data project...
+                    </p>
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <div
+                    id="errorState"
+                    class="alert alert-danger d-none"
+                    role="alert"
+                >
+
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+
+                    <strong>
+                        Gagal memuat data.
+                    </strong>
+
+                    Silakan coba lagi nanti.
+
+                </div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    id="emptyState"
+                    class="alert alert-secondary d-none"
+                    role="alert"
+                >
+
+                    <i class="bi bi-folder-x me-2"></i>
+
+                    Belum ada project yang sesuai dengan
+                    kategori yang dipilih.
+
+                </div>
+
+
+                <!-- PROJECT DARI JSON -->
+
+                <div
+                    id="projectList"
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+                >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== SKILLS ==================== -->
+
+        <section
+            id="skills"
+            class="py-5"
+        >
+
+            <div class="container">
+
+                <div class="text-center mb-4">
+
+                    <h2>
+                        Keahlian
+                    </h2>
+
+                    <p>
+                        Beberapa kemampuan yang sedang saya
+                        kembangkan.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- SKILL 1 -->
+
+                    <div class="col-md-6">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <h3 class="h5">
+
+                                    <i
+                                        class="bi bi-code-slash text-info me-2"
+                                    ></i>
+
+                                    Skills yang Saya Miliki
+
+                                </h3>
+
+
+                                <ul class="mt-3">
+
+                                    <li>
+                                        HTML dan CSS
+                                    </li>
+
+                                    <li>
+                                        Java
+                                    </li>
+
+                                    <li>
+                                        SQL dan Database
+                                    </li>
+
+                                    <li>
+                                        UI/UX Design
+                                    </li>
+
+                                    <li>
+                                        Microsoft Office
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SKILL 2 -->
+
+                    <div class="col-md-6">
+
+                        <div class="card h-100">
+
+                            <div class="card-body">
+
+                                <h3 class="h5">
+
+                                    <i
+                                        class="bi bi-book text-info me-2"
+                                    ></i>
+
+                                    Yang Sedang Saya Pelajari
+
+                                </h3>
+
+
+                                <ol class="mt-3">
+
+                                    <li>
+                                        Pengembangan Website
+                                    </li>
+
+                                    <li>
+                                        Perancangan Antarmuka
+                                    </li>
+
+                                    <li>
+                                        Pengujian Aplikasi Web
+                                    </li>
+
+                                    <li>
+                                        Arsitektur Aplikasi Web
+                                    </li>
+
+                                </ol>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== LAYANAN ==================== -->
+
+        <section
+            id="layanan"
+            class="py-5"
+        >
+
+            <div class="container">
+
+
+                <div class="text-center mb-4">
+
+                    <span class="badge bg-success mb-2">
+                        Services
+                    </span>
+
+                    <h2>
+                        Layanan
+                    </h2>
+
+                    <p>
+                        Pilihan layanan yang tersedia.
+                    </p>
+
+                </div>
+
+
+                <!-- DATA DARI services.json -->
+
+                <div
+                    id="serviceList"
+                    class="row row-cols-1 row-cols-md-3 g-4"
+                >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== KONTAK ==================== -->
+
+        <section
+            id="kontak"
+            class="py-5"
+        >
+
+            <div class="container">
+
+
+                <div class="text-center mb-4">
+
+                    <h2>
+                        Hubungi Saya
+                    </h2>
+
+                    <p>
+                        Silakan isi formulir berikut jika ingin
+                        mengirimkan permintaan layanan.
+                    </p>
+
+                </div>
+
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-8">
+
+                        <div class="card shadow-sm">
+
+                            <div class="card-body p-4">
+
+
+                                <form
+                                    id="serviceForm"
+                                    novalidate
+                                >
+
+
+                                    <!-- NAMA -->
+
+                                    <div class="form-floating mb-3">
+
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="nama"
+                                            name="nama"
+                                            placeholder="Nama Lengkap"
+                                            required
+                                        >
+
+                                        <label for="nama">
+
+                                            <i
+                                                class="bi bi-person me-1"
+                                            ></i>
+
+                                            Nama Lengkap *
+
+                                        </label>
+
+
+                                        <div class="invalid-feedback">
+                                            Nama wajib diisi.
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- EMAIL -->
+
+                                    <div class="form-floating mb-3">
+
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            id="email"
+                                            name="email"
+                                            placeholder="nama@email.com"
+                                            required
+                                        >
+
+                                        <label for="email">
+
+                                            <i
+                                                class="bi bi-envelope me-1"
+                                            ></i>
+
+                                            Alamat Email *
+
+                                        </label>
+
+
+                                        <div class="invalid-feedback">
+                                            Masukkan alamat email yang valid.
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- TELEPON -->
+
+                                    <div class="input-group mb-3">
+
+                                        <span class="input-group-text">
+
+                                            <i
+                                                class="bi bi-telephone"
+                                            ></i>
+
+                                        </span>
+
+
+                                        <div
+                                            class="form-floating flex-grow-1"
+                                        >
+
+                                            <input
+                                                type="tel"
+                                                class="form-control"
+                                                id="telepon"
+                                                name="telepon"
+                                                placeholder="Nomor Telepon"
+                                                required
+                                            >
+
+                                            <label for="telepon">
+                                                Nomor Telepon *
+                                            </label>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- LAYANAN -->
+
+                                    <div class="mb-3">
+
+                                        <label
+                                            for="service"
+                                            class="form-label fw-semibold"
+                                        >
+                                            Pilihan Layanan
+                                        </label>
+
+
+                                        <select
+                                            id="service"
+                                            name="service"
+                                            class="form-select"
+                                            required
+                                        >
+
+                                            <option
+                                                value=""
+                                                selected
+                                                disabled
+                                            >
+                                                Pilih layanan
+                                            </option>
+
+                                        </select>
+
+
+                                        <div class="invalid-feedback">
+                                            Silakan pilih layanan.
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- JENIS -->
+
+                                    <div class="mb-3">
+
+                                        <label class="form-label fw-semibold">
+
+                                            Jenis Permintaan
+
+                                        </label>
+
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="jenis"
+                                                id="jenisKonsultasi"
+                                                value="Konsultasi"
+                                                required
+                                            >
+
+                                            <label
+                                                class="form-check-label"
+                                                for="jenisKonsultasi"
+                                            >
+                                                Konsultasi
+                                            </label>
+
+                                        </div>
+
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="jenis"
+                                                id="jenisPengerjaan"
+                                                value="Pengerjaan"
+                                            >
+
+                                            <label
+                                                class="form-check-label"
+                                                for="jenisPengerjaan"
+                                            >
+                                                Pengerjaan
+                                            </label>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- PESAN -->
+
+                                    <div class="form-floating mb-3">
+
+                                        <textarea
+                                            class="form-control"
+                                            id="pesan"
+                                            name="pesan"
+                                            placeholder="Pesan"
+                                            style="height: 140px"
+                                            required
+                                        ></textarea>
+
+
+                                        <label for="pesan">
+
+                                            <i
+                                                class="bi bi-chat-text me-1"
+                                            ></i>
+
+                                            Pesan *
+
+                                        </label>
+
+
+                                        <div class="invalid-feedback">
+                                            Pesan wajib diisi.
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- TERMS -->
+
+                                    <div class="form-check mb-4">
+
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            id="terms"
+                                            name="terms"
+                                            value="accepted"
+                                            required
+                                        >
+
+
+                                        <label
+                                            class="form-check-label"
+                                            for="terms"
+                                        >
+                                            Saya menyetujui syarat dan
+                                            ketentuan yang berlaku.
+                                        </label>
+
+
+                                        <div class="invalid-feedback">
+                                            Persetujuan wajib dicentang.
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- BUTTON -->
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                    >
+
+                                        <i
+                                            class="bi bi-send me-2"
+                                        ></i>
+
+                                        Kirim Permintaan
+
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== UNIVERSAL MODAL ==================== -->
+
+    <div
+        class="modal fade"
+        id="universalProjectModal"
+        tabindex="-1"
+        aria-labelledby="projectModalTitle"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-dialog modal-lg modal-dialog-centered"
+        >
+
+            <div class="modal-content border-0 shadow-lg">
+
+
+                <div class="modal-header bg-primary text-white">
+
+                    <h2
+                        class="modal-title h5 fw-bold"
+                        id="projectModalTitle"
+                    >
+                        Detail Proyek
+                    </h2>
+
+
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Tutup"
+                    ></button>
+
+                </div>
+
+
+                <div
+                    class="modal-body p-4"
+                    id="projectModalBody"
+                >
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Tutup
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== TOAST ==================== -->
+
+    <div
+        class="position-fixed bottom-0 end-0 p-3"
+        style="z-index: 1100"
+    >
+
+        <div
+            id="feedbackToast"
+            class="toast"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+        >
+
+            <div class="toast-header">
+
+                <i
+                    class="bi bi-check-circle text-success me-2"
+                ></i>
+
+
+                <strong
+                    class="me-auto"
+                    id="toastTitle"
+                >
+                    Informasi
+                </strong>
+
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="toast"
+                    aria-label="Tutup"
+                ></button>
+
+            </div>
+
+
+            <div
+                class="toast-body"
+                id="toastMessage"
+            >
+                Pesan notifikasi.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="bg-dark text-white py-4">
+
+        <div class="container text-center">
+
+            <p class="mb-1">
+
+                &copy; 2026 Indah Nainggolan.
+                All Rights Reserved.
+
+            </p>
+
+
+            <small class="text-secondary">
+
+                Sistem Informasi • Institut Teknologi Del
+
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================== BOOTSTRAP JS ==================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+    <!-- ==================== JAVASCRIPT PROJECT ==================== -->
+
+    <script src="js/api-service.js"></script>
+
+    <script src="js/app.js"></script>
+
 
 </body>
+
 </html>
