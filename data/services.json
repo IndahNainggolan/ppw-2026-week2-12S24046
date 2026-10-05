@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Web Development",
+    "description": "Pembuatan dan pengembangan website sesuai kebutuhan.",
+    "features": [
+      "HTML dan CSS",
+      "Bootstrap",
+      "Responsive Design"
+    ],
+    "price": 500000
+  },
+  {
+    "id": 2,
+    "name": "UI/UX Design",
+    "description": "Perancangan tampilan dan pengalaman pengguna untuk website.",
+    "features": [
+      "User Interface",
+      "User Experience",
+      "Prototype"
+    ],
+    "price": 300000
+  },
+  {
+    "id": 3,
+    "name": "Database Design",
+    "description": "Perancangan database untuk membantu pengelolaan data.",
+    "features": [
+      "ERD",
+      "Database Design",
+      "SQL"
+    ],
+    "price": 400000
+  }
+]
