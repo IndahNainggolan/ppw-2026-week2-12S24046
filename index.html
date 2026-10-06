@@ -16,43 +16,49 @@
 
     <title>Indah.Portfolio</title>
 
-    <!-- Bootstrap 5.3 -->
+    <!-- ==================== BOOTSTRAP 5.3 ==================== -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- Bootstrap Icons -->
+    <!-- ==================== BOOTSTRAP ICONS ==================== -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
-    <!-- Custom CSS -->
+    <!-- ==================== CUSTOM CSS ==================== -->
     <link
         rel="stylesheet"
         href="css/custom-style.css"
     >
 </head>
 
-
 <body>
 
-    <!-- ==================== NAVBAR ==================== -->
+    <!-- ==================== HEADER ==================== -->
 
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <nav
+            class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm"
+        >
 
             <div class="container">
+
+                <!-- BRAND -->
 
                 <a
                     class="navbar-brand fw-bold"
                     href="#tentang"
                 >
-                    Indah<span class="text-info">.Portfolio</span>
+                    <i class="bi bi-code-slash me-1"></i>
+                    Indah.Portfolio
                 </a>
 
+
+                <!-- MOBILE TOGGLE -->
 
                 <button
                     class="navbar-toggler"
@@ -61,62 +67,107 @@
                     data-bs-target="#mainNavbar"
                     aria-controls="mainNavbar"
                     aria-expanded="false"
-                    aria-label="Buka menu navigasi"
+                    aria-label="Toggle navigation"
                 >
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
 
+
+                <!-- NAVIGATION -->
 
                 <div
                     class="collapse navbar-collapse"
                     id="mainNavbar"
                 >
 
-                    <ul class="navbar-nav ms-auto gap-lg-2">
+                    <ul
+                        class="navbar-nav ms-auto align-items-lg-center gap-lg-2"
+                    >
 
                         <li class="nav-item">
+
                             <a
-                                class="nav-link active"
+                                class="nav-link"
                                 href="#tentang"
                             >
-                                Beranda
+                                Tentang
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
+
                             <a
                                 class="nav-link"
                                 href="#portfolio"
                             >
                                 Portfolio
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
+
                             <a
                                 class="nav-link"
                                 href="#skills"
                             >
                                 Keahlian
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
+
                             <a
                                 class="nav-link"
                                 href="#layanan"
                             >
                                 Layanan
                             </a>
+
                         </li>
 
+
                         <li class="nav-item">
+
                             <a
                                 class="nav-link"
                                 href="#kontak"
                             >
                                 Kontak
                             </a>
+
+                        </li>
+
+
+                        <!-- ==================== ORDER BADGE ==================== -->
+
+                        <li class="nav-item ms-lg-2">
+
+                            <span
+                                class="nav-link"
+                                id="orderBadge"
+                            >
+
+                                <i class="bi bi-bag-check me-1"></i>
+
+                                Pesanan
+
+                                <span
+                                    class="badge bg-danger rounded-pill"
+                                    id="orderCount"
+                                >
+                                    0
+                                </span>
+
+                            </span>
+
                         </li>
 
                     </ul>
@@ -144,10 +195,11 @@
 
             <div class="container">
 
-                <div class="row align-items-center g-5">
+                <div
+                    class="row align-items-center g-5"
+                >
 
-
-                    <!-- Teks -->
+                    <!-- TEXT -->
 
                     <div class="col-lg-7">
 
@@ -159,7 +211,6 @@
                         <h1 class="display-4 fw-bold">
 
                             Halo, saya
-
                             <span class="text-info">
                                 Indah Nainggolan
                             </span>
@@ -191,8 +242,11 @@
                                 href="#portfolio"
                                 class="btn btn-primary"
                             >
-                                <i class="bi bi-folder2-open me-2"></i>
+
+                                <i class="bi bi-folder2-open me-1"></i>
+
                                 Lihat Portfolio
+
                             </a>
 
 
@@ -200,8 +254,11 @@
                                 href="#kontak"
                                 class="btn btn-outline-primary"
                             >
-                                <i class="bi bi-envelope me-2"></i>
+
+                                <i class="bi bi-envelope me-1"></i>
+
                                 Hubungi Saya
+
                             </a>
 
                         </div>
@@ -209,36 +266,34 @@
                     </div>
 
 
-                    <!-- FOTO -->
+                    <!-- PHOTO -->
 
                     <div class="col-lg-5">
 
-                        <div class="card border-0 shadow-sm">
+                        <div
+                            class="card border-0 shadow-sm p-4 text-center"
+                        >
 
-                            <div class="card-body p-4 text-center">
-
-                                <img
-                                    src="images/profile-portfolio.jpg"
-                                    alt="Foto Indah Nainggolan"
-                                    class="img-fluid rounded-4 shadow-sm"
-                                    style="
-                                        width: 280px;
-                                        height: 350px;
-                                        object-fit: cover;
-                                    "
-                                >
-
-
-                                <h2 class="h4 mt-4 mb-1">
-                                    Indah Nainggolan
-                                </h2>
+                            <img
+                                src="images/profile-portfolio.jpg"
+                                alt="Foto Indah Nainggolan"
+                                class="img-fluid rounded-4 shadow-sm mx-auto"
+                                style="
+                                    width: 280px;
+                                    height: 350px;
+                                    object-fit: cover;
+                                "
+                            >
 
 
-                                <p class="text-muted mb-0">
-                                    Information Systems Student
-                                </p>
+                            <h2 class="h4 mt-4 mb-1">
+                                Indah Nainggolan
+                            </h2>
 
-                            </div>
+
+                            <p class="text-muted mb-0">
+                                Information Systems Student
+                            </p>
 
                         </div>
 
@@ -260,20 +315,20 @@
 
             <div class="container">
 
-
                 <div class="text-center mb-4">
 
                     <span class="badge bg-info text-dark mb-2">
                         Portfolio
                     </span>
 
+
                     <h2>
                         Portfolio & Proyek
                     </h2>
 
-                    <p>
-                        Beberapa proyek yang pernah saya kerjakan
-                        selama mempelajari Sistem Informasi.
+
+                    <p class="text-muted">
+                        Beberapa proyek yang pernah saya kerjakan.
                     </p>
 
                 </div>
@@ -281,7 +336,9 @@
 
                 <!-- FILTER -->
 
-                <div class="row justify-content-center mb-4">
+                <div
+                    class="row justify-content-center mb-4"
+                >
 
                     <div class="col-md-5">
 
@@ -309,11 +366,11 @@
                 </div>
 
 
-                <!-- LOADING -->
+                <!-- LOADING STATE -->
 
                 <div
                     id="loadingState"
-                    class="text-center py-4"
+                    class="text-center py-5"
                 >
 
                     <div
@@ -328,14 +385,14 @@
                     </div>
 
 
-                    <p class="mt-2">
-                        Memuat data project...
+                    <p class="mt-3 text-muted">
+                        Memuat data portfolio...
                     </p>
 
                 </div>
 
 
-                <!-- ERROR -->
+                <!-- ERROR STATE -->
 
                 <div
                     id="errorState"
@@ -345,16 +402,12 @@
 
                     <i class="bi bi-exclamation-triangle me-2"></i>
 
-                    <strong>
-                        Gagal memuat data.
-                    </strong>
-
-                    Silakan coba lagi nanti.
+                    Gagal memuat data portfolio.
 
                 </div>
 
 
-                <!-- EMPTY -->
+                <!-- EMPTY STATE -->
 
                 <div
                     id="emptyState"
@@ -362,21 +415,19 @@
                     role="alert"
                 >
 
-                    <i class="bi bi-folder-x me-2"></i>
+                    <i class="bi bi-search me-2"></i>
 
-                    Belum ada project yang sesuai dengan
-                    kategori yang dipilih.
+                    Tidak ada project pada kategori tersebut.
 
                 </div>
 
 
-                <!-- PROJECT DARI JSON -->
+                <!-- PROJECT LIST -->
 
                 <div
                     id="projectList"
                     class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
                 >
-
                 </div>
 
             </div>
@@ -395,41 +446,41 @@
 
                 <div class="text-center mb-4">
 
+                    <span class="badge bg-primary mb-2">
+                        Skills
+                    </span>
+
+
                     <h2>
                         Keahlian
                     </h2>
-
-                    <p>
-                        Beberapa kemampuan yang sedang saya
-                        kembangkan.
-                    </p>
 
                 </div>
 
 
                 <div class="row g-4">
 
-
-                    <!-- SKILL 1 -->
-
                     <div class="col-md-6">
 
-                        <div class="card h-100">
+                        <div
+                            class="card h-100 border-0 shadow-sm"
+                        >
 
                             <div class="card-body">
 
-                                <h3 class="h5">
+                                <h3 class="h5 mb-3">
 
-                                    <i
-                                        class="bi bi-code-slash text-info me-2"
-                                    ></i>
+                                    <i class="bi bi-tools me-2"></i>
 
                                     Skills yang Saya Miliki
 
                                 </h3>
 
 
-                                <ul class="mt-3">
+                                <ul
+                                    id="skillsList"
+                                    class="mb-0"
+                                >
 
                                     <li>
                                         HTML dan CSS
@@ -460,26 +511,27 @@
                     </div>
 
 
-                    <!-- SKILL 2 -->
-
                     <div class="col-md-6">
 
-                        <div class="card h-100">
+                        <div
+                            class="card h-100 border-0 shadow-sm"
+                        >
 
                             <div class="card-body">
 
-                                <h3 class="h5">
+                                <h3 class="h5 mb-3">
 
-                                    <i
-                                        class="bi bi-book text-info me-2"
-                                    ></i>
+                                    <i class="bi bi-book me-2"></i>
 
                                     Yang Sedang Saya Pelajari
 
                                 </h3>
 
 
-                                <ol class="mt-3">
+                                <ol
+                                    id="learningList"
+                                    class="mb-0"
+                                >
 
                                     <li>
                                         Pengembangan Website
@@ -491,10 +543,6 @@
 
                                     <li>
                                         Pengujian Aplikasi Web
-                                    </li>
-
-                                    <li>
-                                        Arsitektur Aplikasi Web
                                     </li>
 
                                 </ol>
@@ -521,31 +569,31 @@
 
             <div class="container">
 
-
                 <div class="text-center mb-4">
 
                     <span class="badge bg-success mb-2">
                         Services
                     </span>
 
+
                     <h2>
                         Layanan
                     </h2>
 
-                    <p>
+
+                    <p class="text-muted">
                         Pilihan layanan yang tersedia.
                     </p>
 
                 </div>
 
 
-                <!-- DATA DARI services.json -->
+                <!-- SERVICE LIST -->
 
                 <div
                     id="serviceList"
                     class="row row-cols-1 row-cols-md-3 g-4"
                 >
-
                 </div>
 
             </div>
@@ -553,7 +601,7 @@
         </section>
 
 
-        <!-- ==================== KONTAK ==================== -->
+        <!-- ==================== KONTAK / FORM ==================== -->
 
         <section
             id="kontak"
@@ -562,16 +610,21 @@
 
             <div class="container">
 
-
                 <div class="text-center mb-4">
+
+                    <span class="badge bg-warning text-dark mb-2">
+                        Contact
+                    </span>
+
 
                     <h2>
                         Hubungi Saya
                     </h2>
 
-                    <p>
-                        Silakan isi formulir berikut jika ingin
-                        mengirimkan permintaan layanan.
+
+                    <p class="text-muted">
+                        Silakan isi formulir untuk melakukan
+                        konsultasi atau pemesanan layanan.
                     </p>
 
                 </div>
@@ -581,10 +634,14 @@
 
                     <div class="col-lg-8">
 
-                        <div class="card shadow-sm">
+                        <div
+                            class="card border-0 shadow-sm"
+                        >
 
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 p-lg-5">
 
+
+                                <!-- SERVICE FORM -->
 
                                 <form
                                     id="serviceForm"
@@ -606,13 +663,8 @@
                                         >
 
                                         <label for="nama">
-
-                                            <i
-                                                class="bi bi-person me-1"
-                                            ></i>
-
-                                            Nama Lengkap *
-
+                                            <i class="bi bi-person me-1"></i>
+                                            Nama Lengkap
                                         </label>
 
 
@@ -637,18 +689,13 @@
                                         >
 
                                         <label for="email">
-
-                                            <i
-                                                class="bi bi-envelope me-1"
-                                            ></i>
-
-                                            Alamat Email *
-
+                                            <i class="bi bi-envelope me-1"></i>
+                                            Email
                                         </label>
 
 
                                         <div class="invalid-feedback">
-                                            Masukkan alamat email yang valid.
+                                            Email yang valid wajib diisi.
                                         </div>
 
                                     </div>
@@ -656,40 +703,31 @@
 
                                     <!-- TELEPON -->
 
-                                    <div class="input-group mb-3">
+                                    <div class="form-floating mb-3">
 
-                                        <span class="input-group-text">
-
-                                            <i
-                                                class="bi bi-telephone"
-                                            ></i>
-
-                                        </span>
-
-
-                                        <div
-                                            class="form-floating flex-grow-1"
+                                        <input
+                                            type="tel"
+                                            class="form-control"
+                                            id="telepon"
+                                            name="telepon"
+                                            placeholder="Nomor Telepon"
+                                            required
                                         >
 
-                                            <input
-                                                type="tel"
-                                                class="form-control"
-                                                id="telepon"
-                                                name="telepon"
-                                                placeholder="Nomor Telepon"
-                                                required
-                                            >
+                                        <label for="telepon">
+                                            <i class="bi bi-telephone me-1"></i>
+                                            Nomor Telepon
+                                        </label>
 
-                                            <label for="telepon">
-                                                Nomor Telepon *
-                                            </label>
 
+                                        <div class="invalid-feedback">
+                                            Nomor telepon wajib diisi.
                                         </div>
 
                                     </div>
 
 
-                                    <!-- LAYANAN -->
+                                    <!-- SERVICE -->
 
                                     <div class="mb-3">
 
@@ -697,7 +735,7 @@
                                             for="service"
                                             class="form-label fw-semibold"
                                         >
-                                            Pilihan Layanan
+                                            Jenis Layanan
                                         </label>
 
 
@@ -708,12 +746,8 @@
                                             required
                                         >
 
-                                            <option
-                                                value=""
-                                                selected
-                                                disabled
-                                            >
-                                                Pilih layanan
+                                            <option value="">
+                                                -- Pilih Layanan --
                                             </option>
 
                                         </select>
@@ -726,15 +760,13 @@
                                     </div>
 
 
-                                    <!-- JENIS -->
+                                    <!-- JENIS KONSULTASI -->
 
-                                    <div class="mb-3">
+                                    <div class="mb-4">
 
-                                        <label class="form-label fw-semibold">
-
+                                        <p class="fw-semibold mb-2">
                                             Jenis Permintaan
-
-                                        </label>
+                                        </p>
 
 
                                         <div class="form-check">
@@ -742,15 +774,15 @@
                                             <input
                                                 class="form-check-input"
                                                 type="radio"
-                                                name="jenis"
-                                                id="jenisKonsultasi"
+                                                name="jenisKonsultasi"
+                                                id="konsultasi"
                                                 value="Konsultasi"
                                                 required
                                             >
 
                                             <label
                                                 class="form-check-label"
-                                                for="jenisKonsultasi"
+                                                for="konsultasi"
                                             >
                                                 Konsultasi
                                             </label>
@@ -763,14 +795,14 @@
                                             <input
                                                 class="form-check-input"
                                                 type="radio"
-                                                name="jenis"
-                                                id="jenisPengerjaan"
+                                                name="jenisKonsultasi"
+                                                id="pengerjaan"
                                                 value="Pengerjaan"
                                             >
 
                                             <label
                                                 class="form-check-label"
-                                                for="jenisPengerjaan"
+                                                for="pengerjaan"
                                             >
                                                 Pengerjaan
                                             </label>
@@ -795,13 +827,8 @@
 
 
                                         <label for="pesan">
-
-                                            <i
-                                                class="bi bi-chat-text me-1"
-                                            ></i>
-
-                                            Pesan *
-
+                                            <i class="bi bi-chat-left-text me-1"></i>
+                                            Pesan
                                         </label>
 
 
@@ -821,17 +848,15 @@
                                             type="checkbox"
                                             id="terms"
                                             name="terms"
-                                            value="accepted"
                                             required
                                         >
-
 
                                         <label
                                             class="form-check-label"
                                             for="terms"
                                         >
                                             Saya menyetujui syarat dan
-                                            ketentuan yang berlaku.
+                                            ketentuan pemesanan layanan.
                                         </label>
 
 
@@ -842,16 +867,14 @@
                                     </div>
 
 
-                                    <!-- BUTTON -->
+                                    <!-- SUBMIT -->
 
                                     <button
                                         type="submit"
-                                        class="btn btn-primary"
+                                        class="btn btn-primary w-100"
                                     >
 
-                                        <i
-                                            class="bi bi-send me-2"
-                                        ></i>
+                                        <i class="bi bi-send me-1"></i>
 
                                         Kirim Permintaan
 
@@ -876,6 +899,11 @@
 
     <!-- ==================== UNIVERSAL MODAL ==================== -->
 
+    <!--
+        Hanya ada SATU modal universal.
+        Project dan service menggunakan modal yang sama.
+    -->
+
     <div
         class="modal fade"
         id="universalProjectModal"
@@ -888,24 +916,27 @@
             class="modal-dialog modal-lg modal-dialog-centered"
         >
 
-            <div class="modal-content border-0 shadow-lg">
+            <div
+                class="modal-content border-0 shadow-lg"
+            >
 
+                <div
+                    class="modal-header bg-primary text-white"
+                >
 
-                <div class="modal-header bg-primary text-white">
-
-                    <h2
-                        class="modal-title h5 fw-bold"
+                    <h5
+                        class="modal-title fw-bold"
                         id="projectModalTitle"
                     >
-                        Detail Proyek
-                    </h2>
+                        Detail
+                    </h5>
 
 
                     <button
                         type="button"
                         class="btn-close btn-close-white"
                         data-bs-dismiss="modal"
-                        aria-label="Tutup"
+                        aria-label="Close"
                     ></button>
 
                 </div>
@@ -916,18 +947,7 @@
                     id="projectModalBody"
                 >
 
-                </div>
-
-
-                <div class="modal-footer">
-
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                    >
-                        Tutup
-                    </button>
+                    <!-- Konten diisi secara dinamis oleh app.js -->
 
                 </div>
 
@@ -941,8 +961,7 @@
     <!-- ==================== TOAST ==================== -->
 
     <div
-        class="position-fixed bottom-0 end-0 p-3"
-        style="z-index: 1100"
+        class="toast-container position-fixed bottom-0 end-0 p-3"
     >
 
         <div
@@ -956,7 +975,7 @@
             <div class="toast-header">
 
                 <i
-                    class="bi bi-check-circle text-success me-2"
+                    class="bi bi-check-circle-fill text-success me-2"
                 ></i>
 
 
@@ -964,7 +983,7 @@
                     class="me-auto"
                     id="toastTitle"
                 >
-                    Informasi
+                    Berhasil
                 </strong>
 
 
@@ -972,7 +991,7 @@
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="toast"
-                    aria-label="Tutup"
+                    aria-label="Close"
                 ></button>
 
             </div>
@@ -982,7 +1001,7 @@
                 class="toast-body"
                 id="toastMessage"
             >
-                Pesan notifikasi.
+                Permintaan berhasil dikirim dan disimpan.
             </div>
 
         </div>
@@ -992,23 +1011,17 @@
 
     <!-- ==================== FOOTER ==================== -->
 
-    <footer class="bg-dark text-white py-4">
+    <footer class="py-4">
 
         <div class="container text-center">
 
-            <p class="mb-1">
+            <p class="mb-0 text-muted">
 
                 &copy; 2026 Indah Nainggolan.
-                All Rights Reserved.
+                Dibuat untuk Praktikum Pemrograman
+                dan Pengujian Web.
 
             </p>
-
-
-            <small class="text-secondary">
-
-                Sistem Informasi • Institut Teknologi Del
-
-            </small>
 
         </div>
 
@@ -1022,12 +1035,14 @@
     ></script>
 
 
-    <!-- ==================== JAVASCRIPT PROJECT ==================== -->
+    <!-- ==================== API SERVICE ==================== -->
 
     <script src="js/api-service.js"></script>
 
-    <script src="js/app.js"></script>
 
+    <!-- ==================== APPLICATION ==================== -->
+
+    <script src="js/app.js"></script>
 
 </body>
 

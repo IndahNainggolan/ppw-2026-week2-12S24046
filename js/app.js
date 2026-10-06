@@ -4,10 +4,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     // MENGAMBIL ELEMENT DARI HTML
     // ==========================================
 
-    const projectList = document.getElementById("projectList");
-    const loadingState = document.getElementById("loadingState");
-    const errorState = document.getElementById("errorState");
-    const emptyState = document.getElementById("emptyState");
+    const projectList =
+        document.getElementById("projectList");
+
+    const loadingState =
+        document.getElementById("loadingState");
+
+    const errorState =
+        document.getElementById("errorState");
+
+    const emptyState =
+        document.getElementById("emptyState");
 
     const categoryFilter =
         document.getElementById("categoryFilter");
@@ -26,6 +33,36 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const serviceForm =
         document.getElementById("serviceForm");
+
+    const orderCount =
+        document.getElementById("orderCount");
+
+
+    // ==========================================
+    // HELPER SECURITY
+    // ==========================================
+
+    function escapeHTML(value) {
+
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    function safeIconClass(icon) {
+
+        const value = String(icon || "bi-briefcase");
+
+        if (/^bi-[a-z0-9-]+$/i.test(value)) {
+            return value;
+        }
+
+        return "bi-briefcase";
+    }
 
 
     // ==========================================
@@ -97,6 +134,58 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     // ==========================================
+    // LOCAL STORAGE
+    // ==========================================
+
+    function getStoredOrders() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem("serviceOrders")
+            ) || [];
+
+        } catch (error) {
+
+            console.error(
+                "Gagal membaca LocalStorage:",
+                error
+            );
+
+            return [];
+        }
+    }
+
+
+    function updateOrderBadge() {
+
+        if (!orderCount) {
+            return;
+        }
+
+        const orders = getStoredOrders();
+
+        orderCount.textContent = orders.length;
+    }
+
+
+    function saveOrderToLocalStorage(order) {
+
+        const existingOrders =
+            getStoredOrders();
+
+        existingOrders.push(order);
+
+        localStorage.setItem(
+            "serviceOrders",
+            JSON.stringify(existingOrders)
+        );
+
+        updateOrderBadge();
+    }
+
+
+    // ==========================================
     // MENAMPILKAN PROJECT
     // ==========================================
 
@@ -109,9 +198,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         projectList.innerHTML = "";
 
         if (!projects || projects.length === 0) {
+
             showEmpty();
+
             return;
         }
+
 
         projects.forEach((project) => {
 
@@ -120,36 +212,68 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             column.className = "col";
 
+
+            const icon =
+                safeIconClass(project.icon);
+
+            const category =
+                escapeHTML(project.category);
+
+            const title =
+                escapeHTML(project.title);
+
+            const description =
+                escapeHTML(project.description);
+
+            const projectId =
+                escapeHTML(project.id);
+
+
             column.innerHTML = `
                 <article class="card h-100 shadow-sm">
 
                     <div class="card-body">
 
                         <div class="mb-3 fs-2 text-info">
-                            <i class="bi ${project.icon}"></i>
+
+                            <i class="bi ${icon}"></i>
+
                         </div>
 
+
                         <span class="badge bg-primary mb-2">
-                            ${project.category}
+
+                            ${category}
+
                         </span>
 
+
                         <h3 class="card-title h5">
-                            ${project.title}
+
+                            ${title}
+
                         </h3>
 
+
                         <p class="card-text">
-                            ${project.description}
+
+                            ${description}
+
                         </p>
+
 
                         <button
                             type="button"
                             class="btn btn-primary"
                             data-bs-toggle="modal"
                             data-bs-target="#universalProjectModal"
-                            data-project-id="${project.id}"
+                            data-project-id="${projectId}"
                         >
+
                             <i class="bi bi-eye me-1"></i>
+
                             Lihat Detail
+
                         </button>
 
                     </div>
@@ -157,9 +281,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </article>
             `;
 
+
             projectList.appendChild(column);
 
         });
+
 
         hideStates();
     }
@@ -175,6 +301,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+
+        categoryFilter.innerHTML = `
+            <option value="all">
+                Semua Kategori
+            </option>
+        `;
+
+
         const categories = [
             ...new Set(
                 projects.map(
@@ -183,12 +317,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             )
         ];
 
+
         categories.forEach((category) => {
 
             const option =
                 document.createElement("option");
 
             option.value = category;
+
             option.textContent = category;
 
             categoryFilter.appendChild(option);
@@ -207,8 +343,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (selectedCategory === "all") {
 
                     renderProjects(projects);
-                    return;
 
+                    return;
                 }
 
 
@@ -237,6 +373,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!project) {
             return;
         }
+
 
         if (modalTitle) {
 
@@ -269,7 +406,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                                 .map(
                                     (tag) => `
                                         <span class="badge bg-secondary me-1 mb-1">
-                                            ${tag}
+
+                                            ${escapeHTML(tag)}
+
                                         </span>
                                     `
                                 )
@@ -279,8 +418,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     </div>
                 `;
-
             }
+
+
+            const icon =
+                safeIconClass(project.icon);
+
+            const category =
+                escapeHTML(project.category);
+
+            const title =
+                escapeHTML(project.title);
+
+            const description =
+                escapeHTML(project.description);
 
 
             modalBody.innerHTML = `
@@ -289,31 +440,37 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     <div class="fs-1 text-info mb-3">
 
-                        <i class="bi ${project.icon}"></i>
+                        <i class="bi ${icon}"></i>
 
                     </div>
 
+
                     <span class="badge bg-primary">
-                        ${project.category}
+
+                        ${category}
+
                     </span>
 
                 </div>
 
 
                 <h3 class="h5">
-                    ${project.title}
+
+                    ${title}
+
                 </h3>
 
 
                 <p class="mt-3">
-                    ${project.description}
+
+                    ${description}
+
                 </p>
 
 
                 ${tagsHTML}
 
             `;
-
         }
 
     }
@@ -329,18 +486,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+
         serviceList.innerHTML = "";
+
 
         if (!services || services.length === 0) {
 
             serviceList.innerHTML = `
+
                 <div class="col-12">
 
                     <div class="alert alert-secondary">
+
                         Belum ada layanan yang tersedia.
+
                     </div>
 
                 </div>
+
             `;
 
             return;
@@ -374,8 +537,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
             const serviceIcon =
-                service.icon ||
-                "bi-briefcase";
+                safeIconClass(service.icon);
 
 
             column.innerHTML = `
@@ -392,12 +554,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
                         <h3 class="h5">
-                            ${serviceTitle}
+
+                            ${escapeHTML(serviceTitle)}
+
                         </h3>
 
 
                         <p class="text-muted">
-                            ${serviceDescription}
+
+                            ${escapeHTML(serviceDescription)}
+
                         </p>
 
 
@@ -406,7 +572,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             class="btn btn-outline-primary mt-2"
                             data-bs-toggle="modal"
                             data-bs-target="#universalProjectModal"
-                            data-service-id="${serviceId}"
+                            data-service-id="${escapeHTML(serviceId)}"
                         >
 
                             <i class="bi bi-info-circle me-1"></i>
@@ -439,10 +605,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+
         serviceSelect.innerHTML = `
+
             <option value="" selected disabled>
+
                 Pilih layanan
+
             </option>
+
         `;
 
 
@@ -497,8 +668,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         const serviceIcon =
-            service.icon ||
-            "bi-briefcase";
+            safeIconClass(service.icon);
 
 
         if (modalTitle) {
@@ -525,12 +695,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
                 <h3 class="h5">
-                    ${serviceTitle}
+
+                    ${escapeHTML(serviceTitle)}
+
                 </h3>
 
 
                 <p class="mt-3">
-                    ${serviceDescription}
+
+                    ${escapeHTML(serviceDescription)}
+
                 </p>
 
 
@@ -648,27 +822,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     // ==========================================
-    // LOCAL STORAGE
+    // FORM DATA
     // ==========================================
-
-    function saveOrderToLocalStorage(order) {
-
-        const existingOrders =
-            JSON.parse(
-                localStorage.getItem("serviceOrders")
-            ) || [];
-
-
-        existingOrders.push(order);
-
-
-        localStorage.setItem(
-            "serviceOrders",
-            JSON.stringify(existingOrders)
-        );
-
-    }
-
 
     function getFormData(form) {
 
@@ -684,7 +839,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (data[key]) {
 
                     if (!Array.isArray(data[key])) {
-                        data[key] = [data[key]];
+
+                        data[key] =
+                            [data[key]];
+
                     }
 
                     data[key].push(value);
@@ -700,7 +858,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         return data;
-
     }
 
 
@@ -718,9 +875,16 @@ document.addEventListener("DOMContentLoaded", async () => {
                 "feedbackToast"
             );
 
+
         const toastMessage =
             document.getElementById(
                 "toastMessage"
+            );
+
+
+        const toastTitle =
+            document.getElementById(
+                "toastTitle"
             );
 
 
@@ -730,7 +894,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         if (toastMessage) {
-            toastMessage.textContent = message;
+
+            toastMessage.textContent =
+                message;
+
         }
 
 
@@ -738,6 +905,23 @@ document.addEventListener("DOMContentLoaded", async () => {
             "bg-success",
             "bg-danger"
         );
+
+
+        if (toastTitle) {
+
+            if (type === "success") {
+
+                toastTitle.textContent =
+                    "Berhasil";
+
+            } else {
+
+                toastTitle.textContent =
+                    "Gagal";
+
+            }
+
+        }
 
 
         if (type === "success") {
@@ -784,7 +968,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 event.preventDefault();
 
 
-                // Validasi Bootstrap
+                // ----------------------------------
+                // VALIDASI BOOTSTRAP
+                // ----------------------------------
 
                 if (!serviceForm.checkValidity()) {
 
@@ -795,7 +981,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     );
 
                     return;
-
                 }
 
 
@@ -804,13 +989,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                 );
 
 
-                // Ambil semua data form
+                // ----------------------------------
+                // AMBIL DATA FORM
+                // ----------------------------------
 
                 const formData =
                     getFormData(serviceForm);
 
-
-                // Tambahkan informasi waktu
 
                 const payload = {
 
@@ -822,7 +1007,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 };
 
 
-                // Disable tombol sementara
+                // ----------------------------------
+                // DISABLE TOMBOL
+                // ----------------------------------
 
                 const submitButton =
                     serviceForm.querySelector(
@@ -835,11 +1022,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                     submitButton.disabled = true;
 
                     submitButton.innerHTML = `
+
                         <span
                             class="spinner-border spinner-border-sm me-2"
                             role="status"
+                            aria-hidden="true"
                         ></span>
+
                         Mengirim...
+
                     `;
 
                 }
@@ -865,7 +1056,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                         ...payload,
 
-                        apiResponse: response,
+                        apiResponse:
+                            response,
 
                         savedAt:
                             new Date().toISOString()
@@ -883,7 +1075,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                     );
 
 
-                    // Reset form
+                    // ----------------------------------
+                    // RESET FORM
+                    // ----------------------------------
 
                     serviceForm.reset();
 
@@ -905,17 +1099,23 @@ document.addEventListener("DOMContentLoaded", async () => {
                         "error"
                     );
 
+
                 } finally {
 
-                    // Aktifkan kembali tombol
+                    // ----------------------------------
+                    // AKTIFKAN KEMBALI TOMBOL
+                    // ----------------------------------
 
                     if (submitButton) {
 
                         submitButton.disabled = false;
 
                         submitButton.innerHTML = `
+
                             <i class="bi bi-send me-1"></i>
+
                             Kirim Permintaan
+
                         `;
 
                     }
@@ -936,6 +1136,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         showLoading();
 
+
+        // ==================================
+        // UPDATE BADGE LOCAL STORAGE
+        // ==================================
+
+        updateOrderBadge();
+
+
+        // ==================================
+        // AMBIL DATA JSON
+        // ==================================
 
         const [
             projects,
